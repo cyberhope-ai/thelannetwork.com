@@ -93,6 +93,14 @@ export default function Home() {
             Rick &amp; Arek hacked together a T1 line and built defenses by hand. <span className="font-bold">That instinct
             for protecting infrastructure became TLN&apos;s second life.</span>
           </p>
+          <a
+            href="https://esports.thelannetwork.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-5 px-5 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline"
+          >
+            Visit the original 2008–2012 site (museum) ↗
+          </a>
         </div>
       </section>
 

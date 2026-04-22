@@ -71,6 +71,21 @@ export default function History() {
           connects them: <span className="font-bold text-tln-text">passion drives skill drives outcomes</span>.
           We learned it from Halo pros. We applied it to education. We&apos;re applying it now to cybersecurity.
         </p>
+        <div className="mt-6 p-4 border-2 border-tln-line bg-tln-ink rounded-lg max-w-2xl">
+          <p className="text-tln-red text-xs uppercase tracking-wider font-bold mb-2">Live Museum</p>
+          <p className="text-tln-text/90 text-sm leading-relaxed font-medium mb-3">
+            The original TLN site is preserved and running — exactly as it was in 2008–2012.
+            Same PHP. Same vBulletin forum. Same content. Frozen in time, read-only.
+          </p>
+          <a
+            href="https://esports.thelannetwork.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-4 py-2 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-xs no-underline"
+          >
+            Visit the 2008–2012 archive ↗
+          </a>
+        </div>
       </section>
 
       {phases.map((p, i) => (
