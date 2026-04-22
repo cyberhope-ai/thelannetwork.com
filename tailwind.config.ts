@@ -12,18 +12,19 @@ const config: Config = {
         display: ["var(--font-display)", "Georgia", "serif"],
       },
       colors: {
-        // TLN brand placeholder palette — esports roots × modern tech
-        // tweak with Rick's visual direction
         tln: {
-          black: "#0a0a0f",
-          ink: "#13131b",
-          panel: "#1a1a26",
-          line: "#2a2a3a",
-          muted: "#7a7a8e",
-          text: "#e6e6ee",
-          accent: "#00e1ff",      // electric cyan — esports legacy nod
-          accent2: "#a855f7",     // purple — modern tech
-          warm: "#fbbf24",        // gold accent for credibility/awards
+          // Actual TLN brand from the shield logos
+          red:    "#DC2626",   // primary brand red — shield TLN letters
+          sky:    "#5DADE2",   // shield blue background
+          steel:  "#6B7280",   // shield border / metallic grey
+          black:  "#0a0a0f",   // page background
+          ink:    "#13131b",   // panel surface
+          panel:  "#1a1a26",   // card surface
+          line:   "#2a2a3a",   // borders
+          muted:  "#7a7a8e",   // secondary text
+          text:   "#e6e6ee",   // primary text
+          // Heritage orange — used ONLY in /history, /esports legacy refs
+          orange: "#F97316",
         },
       },
     },
