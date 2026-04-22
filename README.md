@@ -1,2 +1,2 @@
-# thelannetwork.com-website
+# thelannetwork.com
 The LAN Network Website
