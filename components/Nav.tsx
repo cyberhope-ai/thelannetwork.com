@@ -61,7 +61,7 @@ export default function Nav() {
           <Dropdown label="Cybersecurity" items={cyberMenu} />
           <Dropdown label="esports" items={esportsMenu} />
           <Link href="/ai-development" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wider transition-colors no-underline">AI Development</Link>
-          <a href="https://hopetrainingacademy.org/hope-training-academy-apprenticeship-ambassador/" target="_blank" rel="noopener noreferrer" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wider transition-colors no-underline">Apprenticeships ↗</a>
+          <Link href="/apprenticeships" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wider transition-colors no-underline">Apprenticeships</Link>
           <Link href="/about" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wider transition-colors no-underline">About</Link>
           <Link href="/history" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wider transition-colors no-underline">History</Link>
           <Link href="/contact" className="px-4 py-2 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-xs no-underline">Get a Quote</Link>
