@@ -19,25 +19,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-<<<<<<< Updated upstream
-  title: "The LAN Network — AI Software Development",
-  description:
-    "AI software development, automation, and custom engineering. Esports-rooted credibility, modern technology delivery.",
-  keywords: [
-    "The LAN Network",
-    "TLN",
-    "AI software development",
-    "software development",
-    "AI-augmented engineering",
-    "esports",
-    "Indianapolis",
-  ],
-  authors: [{ name: "The LAN Network" }],
-=======
   title: "The LAN Network — Cybersecurity. esports. Custom Tech.",
   description:
     "Born 2008 in Chicago as the world's first esports team bootcamp house. Trained Tyler 'Ninja' Blevins. Defended live Halo streams with cybersecurity before cybersecurity was cool. Reborn 2025 in Indianapolis. Charity partner: Video Game Palooza — 2000+ Hoosiers trained since 2018.",
->>>>>>> Stashed changes
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -46,12 +30,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-screen bg-tln-black text-tln-text">
         <Nav />
         <main>{children}</main>
-<<<<<<< Updated upstream
-        <footer className="border-t border-tln-line mt-24 py-10 text-center text-sm text-tln-muted">
-          <div className="max-w-6xl mx-auto px-6">
-            <p>The LAN Network · Indianapolis · est. esports community → AI software development</p>
-            <p className="mt-2 text-xs">© {new Date().getFullYear()} The LAN Network. Powered by AI-augmented engineering.</p>
-=======
         <footer className="border-t border-tln-line mt-24">
           {/* Charity partner block */}
           <div className="bg-tln-ink border-b border-tln-line">
@@ -104,7 +82,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <Link href="/contact" className="text-tln-muted no-underline hover:text-tln-text">Contact</Link>
               </p>
             </div>
->>>>>>> Stashed changes
           </div>
         </footer>
       </body>

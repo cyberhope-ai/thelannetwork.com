@@ -1,16 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-<<<<<<< Updated upstream
-const links = [
-  { href: "/services", label: "Services" },
-  { href: "/ai-development", label: "AI Dev" },
-  { href: "/cybersecurity", label: "Security" },
-  { href: "/esports", label: "Esports" },
-  { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-=======
 const cyberMenu = [
   { href: "/cybersecurity",            label: "Cybersecurity Overview" },
   { href: "/cybersecurity/external",   label: "External Pen Testing" },
@@ -23,7 +13,6 @@ const cyberMenu = [
   { href: "/cybersecurity/redteam",    label: "Red Team" },
   { href: "/cybersecurity#esports",    label: "esports Cybersecurity" },
   { href: "/cybersecurity/methodology",label: "Our Methodology" },
->>>>>>> Stashed changes
 ];
 
 const esportsMenu = [

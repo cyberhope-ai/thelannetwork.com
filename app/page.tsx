@@ -37,36 +37,6 @@ export default function Home() {
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 pt-20 pb-16">
-<<<<<<< Updated upstream
-        <div className="max-w-3xl">
-          <p className="text-tln-accent text-sm uppercase tracking-widest mb-4">
-            AI Software Development
-          </p>
-          <h1 className="font-display text-5xl md:text-6xl leading-tight mb-6">
-            From an esports community
-            <br />
-            to an <span className="text-tln-accent">AI software</span> partner.
-          </h1>
-          <p className="text-lg text-tln-muted mb-8 leading-relaxed">
-            The LAN Network started as Indianapolis&apos;s esports fan community.
-            Today we build custom software, integrations, and automations for clients
-            who value modern delivery — backed by an AI-augmented team and cryptographic
-            audit trails on every project.
-          </p>
-          <div className="flex gap-4">
-            <Link
-              href="/contact"
-              className="inline-block px-6 py-3 bg-tln-accent text-tln-black font-medium rounded no-underline hover:opacity-90"
-            >
-              Start a Project →
-            </Link>
-            <Link
-              href="/services"
-              className="inline-block px-6 py-3 border border-tln-line text-tln-text rounded no-underline hover:border-tln-accent"
-            >
-              See What We Do
-            </Link>
-=======
         <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
           <div>
             <p className="text-tln-red text-sm uppercase tracking-[0.2em] font-bold mb-4">
@@ -92,7 +62,6 @@ export default function Home() {
           </div>
           <div className="hidden md:block">
             <Image src="/brand/tln-cybersecurity-shield.png" alt="TLN Shield" width={280} height={280} priority />
->>>>>>> Stashed changes
           </div>
         </div>
       </section>
