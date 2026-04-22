@@ -32,12 +32,12 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-6 pt-20 pb-16">
         <div className="max-w-3xl">
           <p className="text-tln-accent text-sm uppercase tracking-widest mb-4">
-            Custom Technology Development
+            AI Software Development
           </p>
           <h1 className="font-display text-5xl md:text-6xl leading-tight mb-6">
             From an esports community
             <br />
-            to a <span className="text-tln-accent">custom technology</span> partner.
+            to an <span className="text-tln-accent">AI software</span> partner.
           </h1>
           <p className="text-lg text-tln-muted mb-8 leading-relaxed">
             The LAN Network started as Indianapolis&apos;s esports fan community.

@@ -16,13 +16,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "The LAN Network — Custom Technology Development",
+  title: "The LAN Network — AI Software Development",
   description:
-    "Custom software, automation, and AI-augmented engineering. Esports-rooted credibility, modern technology delivery.",
+    "AI software development, automation, and custom engineering. Esports-rooted credibility, modern technology delivery.",
   keywords: [
     "The LAN Network",
     "TLN",
-    "custom technology development",
+    "AI software development",
     "software development",
     "AI-augmented engineering",
     "esports",
@@ -43,7 +43,7 @@ export default function RootLayout({
         <main>{children}</main>
         <footer className="border-t border-tln-line mt-24 py-10 text-center text-sm text-tln-muted">
           <div className="max-w-6xl mx-auto px-6">
-            <p>The LAN Network · Indianapolis · est. esports community → custom technology development</p>
+            <p>The LAN Network · Indianapolis · est. esports community → AI software development</p>
             <p className="mt-2 text-xs">© {new Date().getFullYear()} The LAN Network. Powered by AI-augmented engineering.</p>
           </div>
         </footer>
