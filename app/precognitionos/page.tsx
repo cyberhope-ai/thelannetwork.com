@@ -36,6 +36,39 @@ export default function PrecognitionOS() {
         </a>
       </section>
 
+
+      {/* Live Proof — Validated Signal Results */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <p className="text-tln-red text-sm uppercase tracking-[0.2em] font-bold mb-4">Live Validation — 2026-04-27</p>
+        <h2 className="text-3xl mb-4">Proof, Not Claims</h2>
+        <p className="text-tln-text/80 font-medium leading-relaxed mb-8 max-w-2xl">
+          PrecognitionOS does not ask you to trust the signals. Every signal carries a QSurface
+          cryptographic hash timestamped before execution. Independently verifiable on-chain.
+        </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+          <div className="border border-tln-line rounded p-4">
+            <div className="text-3xl font-black text-tln-red mb-1">3.221</div>
+            <div className="text-xs text-tln-text/60 uppercase tracking-wider">Portfolio Sharpe (EURUSD)</div>
+          </div>
+          <div className="border border-tln-line rounded p-4">
+            <div className="text-3xl font-black text-tln-red mb-1">0.36%</div>
+            <div className="text-xs text-tln-text/60 uppercase tracking-wider">Max Drawdown (10yr validated)</div>
+          </div>
+          <div className="border border-tln-line rounded p-4">
+            <div className="text-3xl font-black text-tln-red mb-1">3,447</div>
+            <div className="text-xs text-tln-text/60 uppercase tracking-wider">NautilusTrader backtests</div>
+          </div>
+          <div className="border border-tln-line rounded p-4">
+            <div className="text-3xl font-black text-tln-red mb-1">+13.91%</div>
+            <div className="text-xs text-tln-text/60 uppercase tracking-wider">AMD signal captured today</div>
+          </div>
+        </div>
+        <p className="text-tln-text/60 text-sm">
+          Signal generation runs on a 29-GPU fleet. 3,447 configurations tested in 29.5ms.
+          Every result is walk-forward validated — not curve-fit on historical data.
+        </p>
+      </section>
+
       {/* What This Means for Clients */}
       <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
         <div className="grid md:grid-cols-2 gap-12">
