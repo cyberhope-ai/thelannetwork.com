@@ -19,9 +19,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "The LAN Network — Cybersecurity. esports. Custom Tech.",
+  title: "The LAN Network | Human-Led AI Technology Development",
   description:
-    "Born 2008 in Chicago as the world's first esports team bootcamp house. Trained Tyler 'Ninja' Blevins. Defended live Halo streams with cybersecurity before cybersecurity was cool. Reborn 2025 in Indianapolis. Charity partner: Video Game Palooza — 2000+ Hoosiers trained since 2018.",
+    "The LAN Network builds AI-native software, automations, cybersecurity systems, and apprenticeship-supported technology pathways using human-led teams and governed AI workflows.",
+  keywords: [
+    "human-led AI technology development",
+    "AI automation",
+    "cybersecurity",
+    "apprenticeships",
+    "governed AI workflows",
+    "The LAN Network",
+    "TLN",
+    "Indianapolis",
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -68,19 +78,28 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {/* Site footer line */}
           <div className="py-10 text-center text-sm text-tln-muted">
             <div className="max-w-6xl mx-auto px-6">
-              <p className="font-bold text-tln-text">The LAN Network · Born Chicago 2008 · Reborn Indianapolis 2025</p>
-              <p className="mt-2 text-xs">© {new Date().getFullYear()} The LAN Network. Powered by AI-augmented engineering with cryptographic audit trails.</p>
-              <p className="mt-2 text-xs">
-                <Link href="/cybersecurity" className="text-tln-muted no-underline hover:text-tln-text">Cybersecurity</Link>
-                {" · "}
-                <Link href="/esports" className="text-tln-muted no-underline hover:text-tln-text">esports</Link>
-                {" · "}
-                <Link href="/history" className="text-tln-muted no-underline hover:text-tln-text">History</Link>
-                {" · "}
-                <Link href="/about" className="text-tln-muted no-underline hover:text-tln-text">About</Link>
-                {" · "}
-                <Link href="/contact" className="text-tln-muted no-underline hover:text-tln-text">Contact</Link>
-              </p>
+              <p className="font-bold text-tln-text">The LAN Network · Human-Led AI Technology Development</p>
+              <p className="mt-1 text-xs text-tln-muted">Born Chicago 2008 · Reborn Indianapolis 2025</p>
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 mt-4 text-xs">
+                <Link href="/ai-technology-development" className="text-tln-muted no-underline hover:text-tln-red">AI Technology Development</Link>
+                <span className="text-tln-line">·</span>
+                <Link href="/ai-automation" className="text-tln-muted no-underline hover:text-tln-red">AI Automation</Link>
+                <span className="text-tln-line">·</span>
+                <Link href="/cybersecurity" className="text-tln-muted no-underline hover:text-tln-red">Cybersecurity</Link>
+                <span className="text-tln-line">·</span>
+                <Link href="/apprenticeships" className="text-tln-muted no-underline hover:text-tln-red">Apprenticeships</Link>
+                <span className="text-tln-line">·</span>
+                <Link href="/how-we-deliver" className="text-tln-muted no-underline hover:text-tln-red">How We Deliver</Link>
+                <span className="text-tln-line">·</span>
+                <a href="https://cyberhopeai.com" target="_blank" rel="noopener noreferrer" className="text-tln-muted no-underline hover:text-tln-red">CyberHope AI</a>
+                <span className="text-tln-line">·</span>
+                <a href="https://hopetrainingacademy.org" target="_blank" rel="noopener noreferrer" className="text-tln-muted no-underline hover:text-tln-red">Hope Training Academy</a>
+                <span className="text-tln-line">·</span>
+                <a href="https://esports.thelannetwork.com" target="_blank" rel="noopener noreferrer" className="text-tln-muted no-underline hover:text-tln-red">TLN Esports Archive</a>
+                <span className="text-tln-line">·</span>
+                <Link href="/start-a-project" className="text-tln-muted no-underline hover:text-tln-red">Contact</Link>
+              </div>
+              <p className="mt-4 text-xs">© {new Date().getFullYear()} The LAN Network. Human-Led. AI-Assisted. Cyber-Aware.</p>
             </div>
           </div>
         </footer>

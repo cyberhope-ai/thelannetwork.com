@@ -1,120 +1,117 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Technology and AI Apprenticeships | The LAN Network",
+  description: "The LAN Network supports technology, cybersecurity, IT, coding, and AI apprenticeship pathways through supervised project environments and training partners.",
+};
+
+const areas = [
+  { title: "Cybersecurity", desc: "Cyber hygiene, risk awareness, security operations basics, and secure workflow thinking." },
+  { title: "AI Education", desc: "Practical AI literacy, responsible AI use, human-in-the-loop workflows, AI-assisted documentation, and productivity tools." },
+  { title: "Software and Automation", desc: "Coding fundamentals, workflow automation, documentation, QA, and internal tool support." },
+  { title: "IT Support", desc: "Desktop support, troubleshooting, systems basics, device management, and user support." },
+  { title: "Digital Operations", desc: "Esports, events, streaming, content operations, dashboards, and live digital environments." },
+];
 
 export default function Apprenticeships() {
   return (
     <div>
-      <section className="max-w-4xl mx-auto px-6 pt-16 pb-10">
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-6 pt-20 pb-16">
         <p className="text-tln-red text-sm uppercase tracking-[0.2em] font-bold mb-4">Apprenticeships</p>
-        <h1 className="text-5xl mb-6">Trained before it had a name.</h1>
-        <p className="text-lg text-tln-text/90 leading-relaxed font-medium max-w-3xl">
-          The LAN Network ran the <b>first esports apprenticeship</b> in the Midwest — a Chicago gamer
-          house where young players learned competitive strategy, stream engineering, tournament
-          logistics, and network defense before any university had a program for it. Seventeen years
-          later, we&apos;re still running the same model: real engagements, real mentors, real outcomes.
+        <h1 className="text-5xl md:text-6xl mb-6">Technology Apprenticeships for the AI Era</h1>
+        <p className="text-xl text-tln-text/90 font-medium mb-4 max-w-2xl leading-relaxed">
+          Connecting training, mentorship, real-world projects, cybersecurity, and AI education.
         </p>
+        <p className="text-tln-text/80 font-medium mb-8 max-w-2xl leading-relaxed">
+          The LAN Network supports apprenticeship-enabled technology pathways by connecting supervised
+          real-world project environments with training partners such as Hope Training Academy.
+          Apprenticeships help emerging talent gain practical experience in IT, cybersecurity, coding,
+          AI workflows, documentation, QA, and technology operations.
+        </p>
+        <div className="flex gap-4 flex-wrap">
+          <Link href="/start-a-project" className="inline-block px-6 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-sm no-underline hover:opacity-90">
+            Explore Apprenticeship Partnerships →
+          </Link>
+          <a href="https://hopetrainingacademy.org" target="_blank" rel="noopener noreferrer"
+            className="inline-block px-6 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline">
+            Hope Training Academy →
+          </a>
+        </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-10 border-t border-tln-line">
-        <h2 className="text-3xl mb-4">What TLN apprentices have done</h2>
-        <ul className="space-y-3 text-tln-text/90 font-medium">
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>esports operations</b> — the first wave (2008-2012). Pro-team support, live-stream production, tournament network defense. Several went pro or built careers behind the scenes for Twitch / YouTube Gaming teams.</li>
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>Network engineering</b> — from the T1-line DDoS-defense era forward. Apprentices built the switching, routing, and firewall instincts that now drive our commercial pen-testing practice.</li>
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>Cybersecurity</b> — red team, web app, mobile, cloud security assessments. Our apprentices work on real client engagements under senior lead supervision, QSurface-signed at every deliverable.</li>
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>Technology &amp; software</b> — AI-augmented development, automation, agentic systems. Graduates have shipped code that runs on our 45-blade compute fabric.</li>
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>Esports competitive + streaming</b> — training center in Indianapolis (2025+) now onboards the next generation of competitive rosters.</li>
-        </ul>
-      </section>
-
-      <section className="max-w-4xl mx-auto px-6 py-10 border-t border-tln-line">
-        <h2 className="text-3xl mb-4">University &amp; academy partnerships</h2>
-        <p className="text-tln-text/90 leading-relaxed font-medium mb-6 max-w-3xl">
-          TLN has placed apprentices from — and partnered on curriculum with — the leading technology
-          programs across Indiana and beyond:
-        </p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="border-2 border-tln-line bg-tln-ink rounded-lg p-5">
-            <p className="text-tln-red font-bold text-xs uppercase tracking-wider mb-2">Primary Partner</p>
-            <h3 className="text-xl mb-2">Hope Training Academy</h3>
-            <p className="text-tln-text/85 text-sm leading-relaxed font-medium">
-              Registered apprenticeship sponsor. Our 501(c)(3) partner (via Video Game Palooza)
-              has trained <b>2,000+ Hoosiers</b> in IT, Cybersecurity, Coding, and AI since 2018.
-              Hire an apprentice through HTA, mentor them on a real TLN engagement.
+      {/* Role Clarity */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <div className="grid md:grid-cols-2 gap-12">
+          <div className="border-l-4 border-tln-red pl-6">
+            <h2 className="text-3xl mb-4">How TLN and Hope Training Academy Work Together</h2>
+            <p className="text-tln-text/80 font-medium leading-relaxed mb-4">
+              <span className="font-bold text-tln-text">Hope Training Academy</span> supports training,
+              credentialing, coursework, and apprenticeship pathways. <span className="font-bold text-tln-text">The LAN Network</span> supports
+              selected mentor-led project environments, technology implementation opportunities, and real-world exposure.
             </p>
+            <p className="text-tln-text/80 font-medium">The two roles are connected, but distinct.</p>
           </div>
-          <div className="border-2 border-tln-line bg-tln-ink rounded-lg p-5">
-            <p className="text-tln-muted font-bold text-xs uppercase tracking-wider mb-2">University</p>
-            <h3 className="text-xl mb-2">Indiana University</h3>
-            <p className="text-tln-text/85 text-sm leading-relaxed font-medium">
-              Student placements in cybersecurity + networking roles. IU&apos;s Luddy School alumni have
-              cut their teeth on TLN pen-test engagements.
-            </p>
-          </div>
-          <div className="border-2 border-tln-line bg-tln-ink rounded-lg p-5">
-            <p className="text-tln-muted font-bold text-xs uppercase tracking-wider mb-2">University</p>
-            <h3 className="text-xl mb-2">Butler University</h3>
-            <p className="text-tln-text/85 text-sm leading-relaxed font-medium">
-              Butler CS + MIS students have rotated through TLN as apprentice analysts on
-              compliance and network-audit work.
-            </p>
-          </div>
-          <div className="border-2 border-tln-line bg-tln-ink rounded-lg p-5">
-            <p className="text-tln-muted font-bold text-xs uppercase tracking-wider mb-2">University</p>
-            <h3 className="text-xl mb-2">IUPUI</h3>
-            <p className="text-tln-text/85 text-sm leading-relaxed font-medium">
-              IUPUI informatics and engineering apprentices have worked on our esports
-              cybersecurity vertical — anti-cheat audits, tournament network defense.
+          <div>
+            <h2 className="text-3xl mb-4">Apprentices Learn Under Supervision</h2>
+            <p className="text-tln-text/80 font-medium leading-relaxed">
+              Apprentices do not replace senior professionals. They contribute under supervision, with mentor
+              review, defined tasks, and human oversight. When apprentice-supported work is part of a client
+              project, responsibilities and review processes are clearly defined.
             </p>
           </div>
         </div>
-        <p className="text-tln-text/85 text-sm font-medium mt-6 italic">
-          Plus additional partnerships with Indiana community colleges, esports academies, and
-          workforce-development programs. Interested in adding your institution?{" "}
-          <Link href="/contact" className="text-tln-red font-bold">Contact us</Link>.
-        </p>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-10 border-t border-tln-line">
-        <h2 className="text-3xl mb-4">How the TLN apprentice model works</h2>
-        <ul className="space-y-3 text-tln-text/90 font-medium">
-          <li><b className="text-tln-red">1. Placement</b> — apprentice is matched to a TLN engagement that fits their track (cybersecurity / networking / AI dev / esports ops).</li>
-          <li><b className="text-tln-red">2. Mentorship</b> — paired with a senior TLN engineer on a real client project. No busywork, no sandbox-only tasks.</li>
-          <li><b className="text-tln-red">3. Attribution</b> — every deliverable the apprentice contributes to is QSurface-signed with their identity on the cryptographic audit chain. Real portfolio artifacts for their career.</li>
-          <li><b className="text-tln-red">4. Placement outcomes</b> — graduates go into full TLN roles, partner-company placements, or advance directly into industry hires (we&apos;ve placed into Fortune 100 security teams).</li>
-        </ul>
+      {/* Areas */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <h2 className="text-3xl mb-10">Apprenticeship Areas</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {areas.map(a => (
+            <div key={a.title} className="border-2 border-tln-line bg-tln-ink rounded-lg p-6 hover:border-tln-red transition-colors">
+              <h3 className="text-xl mb-3">{a.title}</h3>
+              <p className="text-tln-text/80 text-sm leading-relaxed font-medium">{a.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-16 border-t border-tln-line">
-        <div className="border-l-4 border-tln-red pl-6 max-w-3xl mb-8">
-          <p className="text-2xl leading-tight mb-4">Ready to become an apprentice — or hire one?</p>
-          <p className="text-tln-text/90 leading-relaxed font-medium">
-            The formal apprenticeship intake runs through our registered sponsor: Hope Training
-            Academy. HTA handles credentialing, coursework, and Department of Labor registration.
-            TLN handles the real-world mentor engagements.
+      {/* AI Apprenticeships */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <div className="max-w-3xl border-l-4 border-tln-red pl-6">
+          <h2 className="text-3xl mb-4">AI Apprenticeships: Learning the Tools of the Next Workforce</h2>
+          <p className="text-tln-text/80 font-medium leading-relaxed mb-4">
+            AI apprenticeships should not teach people to blindly trust AI. They should teach people how to
+            use AI responsibly: how to scope tasks, review outputs, protect data, document work, validate
+            claims, and escalate decisions to humans.
+          </p>
+          <p className="text-tln-text/80 font-medium leading-relaxed">
+            TLN&apos;s AI-era apprenticeship model focuses on practical, supervised use of AI in real technology workflows.
           </p>
         </div>
-        <div className="flex gap-4 flex-wrap">
-          <a
-            href="https://hopetrainingacademy.org/hope-training-academy-apprenticeship-ambassador/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-4 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-sm no-underline"
-          >
-            Apply / Become an Ambassador ↗
-          </a>
-          <a
-            href="https://hopetrainingacademy.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-4 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline"
-          >
-            All HTA Programs ↗
-          </a>
-          <Link
-            href="/contact"
-            className="inline-block px-6 py-4 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline"
-          >
-            Contact TLN →
-          </Link>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-6 py-20 border-t border-tln-line">
+        <div className="grid md:grid-cols-2 gap-8 items-center bg-tln-ink border-2 border-tln-line rounded-lg p-8">
+          <div>
+            <h2 className="text-3xl mb-3">Become an Apprenticeship Partner</h2>
+            <p className="text-tln-text/80 font-medium leading-relaxed">
+              Organizations, schools, and workforce programs interested in connecting apprenticeship pathways
+              with real technology work are welcome to reach out.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Link href="/start-a-project" className="px-5 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-xs text-center no-underline hover:opacity-90">
+              Start a Conversation →
+            </Link>
+            <a href="https://hopetrainingacademy.org/hope-training-academy-apprenticeship-ambassador/"
+              target="_blank" rel="noopener noreferrer"
+              className="px-5 py-2 border-2 border-tln-line text-tln-muted rounded font-bold uppercase tracking-wider text-xs text-center no-underline hover:border-tln-red hover:text-tln-red transition-colors">
+              HTA Apprenticeship Ambassador →
+            </a>
+          </div>
         </div>
       </section>
     </div>

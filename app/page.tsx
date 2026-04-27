@@ -3,23 +3,36 @@ import Image from "next/image";
 
 const services = [
   {
+    icon: "🤖",
+    title: "AI Technology Development",
+    desc: "Custom AI-assisted software, prototypes, dashboards, internal tools, agent workflows, and MVPs — built with human oversight.",
+    cta: { href: "/ai-technology-development", label: "Explore AI Development →" },
+  },
+  {
+    icon: "⚙️",
+    title: "AI Automation",
+    desc: "Workflow automation, AI-assisted operations, business process redesign, documentation systems, and productivity tooling.",
+    cta: { href: "/ai-automation", label: "Explore Automation →" },
+  },
+  {
     icon: "🛡️",
     title: "Cybersecurity",
-    desc: "Pen testing, network audits, red team. We were doing this in 2010 to keep hackers from DDoSing our Halo streams. Now we do it for the world.",
-    cta: { href: "/cybersecurity", label: "See Cybersecurity →" },
+    desc: "Cyber-aware development, security reviews, cyber hygiene, risk assessments, and secure implementation practices.",
+    cta: { href: "/cybersecurity", label: "Explore Cybersecurity →" },
   },
   {
-    icon: "🎮",
-    title: "esports Cybersecurity",
-    desc: "Anti-cheat audits, tournament network defense, streamer account security. The only pen-test firm born inside a competitive esports house.",
-    cta: { href: "/cybersecurity#esports", label: "esports Vertical →" },
+    icon: "🎓",
+    title: "Apprenticeship Pathways",
+    desc: "Technology, cybersecurity, and AI training pathways connected to supervised real-world project experience.",
+    cta: { href: "/apprenticeships", label: "Explore Apprenticeships →" },
   },
-  {
-    icon: "⚡",
-    title: "AI Software Development",
-    desc: "AI-native software builds, custom automations, agentic systems — every deliverable signed with a cryptographic audit trail.",
-    cta: { href: "/ai-development", label: "AI Development →" },
-  },
+];
+
+const stats = [
+  { v: "2008", l: "Founded (Chicago)" },
+  { v: "17 yrs", l: "Tech innovation lineage" },
+  { v: "Human-Led", l: "Every project, every deliverable" },
+  { v: "2,000+", l: "Hoosiers trained · VGP charity partner" },
 ];
 
 export default function Home() {
@@ -31,7 +44,7 @@ export default function Home() {
           <span className="text-tln-red font-bold uppercase tracking-wider text-xs">Authorized Partner</span>
           <span className="text-tln-muted">·</span>
           <span className="font-bold">Arctic Wolf</span>
-          <span className="text-tln-muted">— Managed Detection & Response (MDR)</span>
+          <span className="text-tln-muted">— Managed Detection &amp; Response (MDR)</span>
         </div>
       </div>
 
@@ -43,20 +56,29 @@ export default function Home() {
               Born Chicago 2008 · Reborn Indianapolis 2025
             </p>
             <h1 className="text-5xl md:text-6xl mb-6">
-              The cybersecurity company that started as the world&apos;s first esports house.
+              Human-Led AI Technology Development
             </h1>
-            <p className="text-lg text-tln-text/90 mb-8 leading-relaxed font-medium max-w-2xl">
-              Founded by Joe &quot;Mr. P&quot; Pennacchio in a Chicago suburb. Trained the world&apos;s best Halo
-              pros and teams. <span className="text-tln-red font-bold">Tyler &quot;Ninja&quot; Blevins lived in our house</span> — the same lab
-              we work in today. We hacked together a T1 line and defended our live streams from
-              hackers before cybersecurity was a buzzword. <span className="font-bold">That&apos;s where TLN comes from.</span>
+            <p className="text-lg text-tln-text/90 mb-4 leading-relaxed font-medium max-w-2xl">
+              The LAN Network builds AI-native software, automations, cybersecurity systems, and workforce
+              pathways using senior human leadership, governed AI workflows, and apprenticeship-trained talent.
+            </p>
+            <p className="text-tln-text/85 mb-8 leading-relaxed max-w-2xl font-medium">
+              Born from esports and team-based technology training, TLN now helps organizations scope, build,
+              secure, and deploy AI-era technology. Clients communicate with human project leads. AI assists
+              inside governed workflows. Human specialists review and approve final deliverables.
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Link href="/contact" className="inline-block px-6 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-sm">
-                Start a Project →
+              <Link
+                href="/start-a-project"
+                className="inline-block px-6 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-sm no-underline hover:opacity-90"
+              >
+                Start an AI Project →
               </Link>
-              <Link href="/history" className="inline-block px-6 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors">
-                Read the History
+              <Link
+                href="/how-we-deliver"
+                className="inline-block px-6 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline"
+              >
+                Explore How We Deliver
               </Link>
             </div>
           </div>
@@ -66,54 +88,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service tiles */}
+      {/* What We Build */}
       <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
-        <h2 className="text-3xl mb-10">What we do</h2>
-        <div className="grid md:grid-cols-3 gap-6">
+        <h2 className="text-3xl mb-2">AI-Era Technology, Built With Accountability</h2>
+        <p className="text-tln-text/80 font-medium mb-10 max-w-2xl">
+          We help organizations scope, build, secure, and deploy practical AI-era systems with
+          human-led teams and governed delivery processes.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map(s => (
-            <div key={s.title} className="border-2 border-tln-line bg-tln-ink rounded-lg p-6 hover:border-tln-red transition-colors">
+            <div
+              key={s.title}
+              className="border-2 border-tln-line bg-tln-ink rounded-lg p-6 hover:border-tln-red transition-colors flex flex-col"
+            >
               <div className="text-4xl mb-3">{s.icon}</div>
               <h3 className="text-2xl mb-3">{s.title}</h3>
-              <p className="text-tln-text/85 text-sm leading-relaxed mb-4 font-medium">{s.desc}</p>
-              <Link href={s.cta.href} className="text-tln-red font-bold text-sm uppercase tracking-wider">{s.cta.label}</Link>
+              <p className="text-tln-text/85 text-sm leading-relaxed mb-4 font-medium flex-1">{s.desc}</p>
+              <Link href={s.cta.href} className="text-tln-red font-bold text-sm uppercase tracking-wider no-underline">
+                {s.cta.label}
+              </Link>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Origin-story strip */}
+      {/* How We Deliver strip */}
       <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
         <div className="border-l-4 border-tln-red pl-6 max-w-3xl">
-          <p className="text-2xl md:text-3xl leading-tight mb-4">
-            We didn&apos;t pivot to cybersecurity. We started there in 2010.
+          <h2 className="text-3xl mb-4">Human-Led. AI-Assisted. Governed.</h2>
+          <p className="text-tln-text/90 leading-relaxed font-medium mb-3">
+            TLN&apos;s delivery model keeps humans responsible for client communication, project scope,
+            quality control, and final acceptance. AI-assisted workflows help accelerate research, planning,
+            development, documentation, testing, and QA inside governed processes.
           </p>
-          <p className="text-tln-text/90 leading-relaxed font-medium">
-            Streaming live Halo matches to the world from a residential gamer house meant constant
-            DDoS attacks, attempted server reboots, and account-hijack attempts on our pro players.
-            Rick &amp; Arek hacked together a T1 line and built defenses by hand. <span className="font-bold">That instinct
-            for protecting infrastructure became TLN&apos;s second life.</span>
+          <p className="text-tln-text/90 leading-relaxed font-medium mb-6">
+            Every client project has a human lead. Every deliverable is human-reviewed. AI is a tool in
+            the workflow, not a replacement for accountability.
           </p>
-          <a
-            href="https://esports.thelannetwork.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-5 px-5 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline"
+          <Link
+            href="/how-we-deliver"
+            className="inline-block px-5 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline"
           >
-            Visit the original 2008–2012 site (museum) ↗
-          </a>
+            See Our Delivery Model →
+          </Link>
         </div>
       </section>
 
-      {/* Proof stats */}
+      {/* Stats */}
       <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-          {[
-            { v: "2008", l: "Founded (Chicago)" },
-            { v: "Ninja", l: "Trained here, lived here" },
-            { v: "17 yrs", l: "Tech innovation lineage" },
-            { v: "100%", l: "Audit-trail attributable work" },
-            { v: "2,000+", l: "Hoosiers trained · VGP charity partner" },
-          ].map(p => (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {stats.map(p => (
             <div key={p.l}>
               <div className="text-4xl text-tln-red font-display font-black">{p.v}</div>
               <div className="text-xs uppercase tracking-wider text-tln-muted mt-1 font-bold">{p.l}</div>
@@ -122,49 +146,103 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* Apprenticeships + Education partner */}
+      {/* PrecognitionOS / Governed AI */}
       <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
-        <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center bg-tln-ink border-2 border-tln-line rounded-lg p-8">
-          <div>
-            <p className="text-tln-red text-xs uppercase tracking-[0.2em] font-bold mb-3">Education + Apprenticeships</p>
-            <h2 className="text-3xl mb-3">Workforce-ready apprentices through Hope Training Academy.</h2>
-            <p className="text-tln-text/90 leading-relaxed font-medium max-w-2xl">
-              TLN partners with <span className="font-bold text-tln-text">Hope Training Academy</span> — a registered apprenticeship sponsor —
-              to build the next generation of cybersecurity, coding, and AI talent. Hire an apprentice
-              through HTA, mentor them on a real TLN engagement, and supply your team with talent
-              that already knows how we work.
+        <div className="max-w-3xl">
+          <p className="text-tln-red text-xs font-bold uppercase tracking-[0.2em] mb-3">Governed AI Workflows</p>
+          <h2 className="text-3xl mb-4">Powered by Governed AI Workflows</h2>
+          <p className="text-tln-text/90 leading-relaxed font-medium mb-3">
+            The LAN Network is a licensed development and implementation partner for selected
+            PrecognitionOS-enabled workflows. PrecognitionOS is developed by CyberHope AI as governed
+            AI infrastructure for accountable autonomous work.
+          </p>
+          <p className="text-tln-text/90 leading-relaxed font-medium mb-6">
+            TLN applies selected governed AI workflows in real-world client delivery, AI development,
+            cybersecurity, documentation, QA, and apprenticeship-supported technology projects.
+          </p>
+          <Link
+            href="/precognitionos"
+            className="text-tln-red font-bold uppercase tracking-wider text-sm no-underline hover:opacity-80"
+          >
+            Learn How TLN Uses Governed AI →
+          </Link>
+        </div>
+      </section>
+
+      {/* Apprenticeships + Heritage */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <div className="grid md:grid-cols-2 gap-10">
+
+          {/* Apprenticeships */}
+          <div className="bg-tln-ink border-2 border-tln-line rounded-lg p-8">
+            <p className="text-tln-red text-xs font-bold uppercase tracking-[0.2em] mb-3">
+              Education + Apprenticeships
             </p>
+            <h2 className="text-3xl mb-3">Building Technology While Building Talent</h2>
+            <p className="text-tln-text/90 leading-relaxed font-medium mb-3">
+              Through related training and apprenticeship pathways, including{" "}
+              <span className="font-bold text-tln-text">Hope Training Academy</span>, TLN connects
+              real-world technology work with supervised learning opportunities in IT, cybersecurity,
+              coding, and AI.
+            </p>
+            <p className="text-tln-text/85 leading-relaxed font-medium mb-6 text-sm">
+              Apprentices do not replace senior professionals. They contribute under supervision, with
+              mentor review, defined responsibilities, and human oversight.
+            </p>
+            <div className="flex flex-col gap-2">
+              <Link
+                href="/apprenticeships"
+                className="inline-block px-5 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-xs text-center no-underline hover:opacity-90"
+              >
+                Explore Apprenticeships →
+              </Link>
+              <a
+                href="https://hopetrainingacademy.org/hope-training-academy-apprenticeship-ambassador/"
+                target="_blank" rel="noopener noreferrer"
+                className="inline-block px-5 py-2 border-2 border-tln-line text-tln-muted rounded font-bold uppercase tracking-wider text-xs text-center no-underline hover:border-tln-red hover:text-tln-red transition-colors"
+              >
+                Hope Training Academy →
+              </a>
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <a
-              href="https://hopetrainingacademy.org/hope-training-academy-apprenticeship-ambassador/"
-              target="_blank" rel="noopener noreferrer"
-              className="inline-block px-5 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-xs text-center no-underline whitespace-nowrap"
+
+          {/* Heritage */}
+          <div className="flex flex-col justify-center">
+            <p className="text-tln-red text-xs font-bold uppercase tracking-[0.2em] mb-3">Heritage</p>
+            <h2 className="text-3xl mb-4">Born From Esports. Rebuilt for the AI Era.</h2>
+            <p className="text-tln-text/90 leading-relaxed font-medium mb-4">
+              TLN&apos;s roots are in esports, live digital operations, and team-based technology training.
+              That experience shaped how we think about talent, pressure, systems, cybersecurity, and
+              fast-moving technical environments.
+            </p>
+            <p className="text-tln-text/85 leading-relaxed font-medium mb-6">
+              Today, the same DNA powers our work in AI development, cybersecurity, and
+              apprenticeship-enabled delivery.
+            </p>
+            <Link
+              href="/about"
+              className="text-tln-red font-bold uppercase tracking-wider text-sm no-underline hover:opacity-80"
             >
-              Become an Apprenticeship Ambassador →
-            </a>
-            <a
-              href="https://hopetrainingacademy.org/"
-              target="_blank" rel="noopener noreferrer"
-              className="inline-block px-5 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-xs text-center hover:border-tln-red transition-colors no-underline whitespace-nowrap"
-            >
-              All HTA Programs ↗
-            </a>
+              Read Our Story →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Differentiator */}
+      {/* Final CTA */}
       <section className="max-w-6xl mx-auto px-6 py-20 border-t border-tln-line">
-        <div className="border-l-4 border-tln-red pl-6 max-w-3xl">
-          <p className="text-3xl mb-3 leading-tight">
-            Every deliverable signed with a cryptographic audit chain.
+        <div className="max-w-2xl">
+          <h2 className="text-4xl md:text-5xl mb-4">Ready to Build With AI, Safely and Practically?</h2>
+          <p className="text-tln-text/90 leading-relaxed font-medium mb-8">
+            Tell us what you are trying to build. TLN can help scope the project, define the workflow,
+            identify the right human and AI-assisted delivery model, and map a practical path to execution.
           </p>
-          <p className="text-tln-text/90 leading-relaxed font-medium">
-            Your compliance team can verify exactly which engineer touched what hardware at what
-            second. Industry-first transparency — built on our own AI-augmented compute fabric.
-          </p>
+          <Link
+            href="/start-a-project"
+            className="inline-block px-8 py-4 bg-tln-red text-white font-bold rounded uppercase tracking-wider text-sm no-underline hover:opacity-90"
+          >
+            Start a Project →
+          </Link>
         </div>
       </section>
     </div>

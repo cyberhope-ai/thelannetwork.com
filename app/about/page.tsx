@@ -1,75 +1,96 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About The LAN Network | From Esports to AI Technology Development",
+  description: "The LAN Network evolved from esports and team-based technology training into human-led AI development, cybersecurity, automation, and apprenticeship-supported delivery.",
+};
 
 export default function About() {
   return (
     <div>
-      <section className="max-w-4xl mx-auto px-6 pt-16 pb-10">
-        <p className="text-tln-red text-sm uppercase tracking-[0.2em] font-bold mb-4">About</p>
-        <h1 className="text-5xl mb-6">17 years. One thread.</h1>
-        <p className="text-lg text-tln-text/90 leading-relaxed font-medium max-w-3xl">
-          The LAN Network started as a Chicago basement that helped invent competitive esports.
-          Today it&apos;s a cybersecurity company with a 45-blade compute fabric and a charitable
-          education arm that&apos;s trained 2,000+ Hoosiers in IT, cybersecurity, coding, and AI.
-          Same DNA the whole way: <span className="font-bold">passion drives skill drives outcomes</span>.
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+        <p className="text-tln-red text-sm uppercase tracking-[0.2em] font-bold mb-4">Our Story</p>
+        <h1 className="text-5xl md:text-6xl mb-6">
+          From Esports Training House to AI Technology Development Company
+        </h1>
+        <p className="text-xl text-tln-text/90 font-medium max-w-2xl leading-relaxed">
+          The LAN Network was born in the world of teams, games, live digital environments, and
+          technical pressure. Today, that DNA powers our work in AI, cybersecurity, and apprenticeships.
         </p>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-10 border-t border-tln-line">
-        <h2 className="text-3xl mb-4">What we do today</h2>
-        <ul className="space-y-3 text-tln-text/90 font-medium">
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>Cybersecurity services</b> — pen testing, network audits, red team, esports cybersecurity (anti-cheat audits, tournament network defense, streamer/player account security).</li>
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>Custom technology development</b> — software, automation, AI-augmented engineering. Every deliverable signed with a cryptographic audit chain.</li>
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>esports team revival</b> — competitive rosters, sponsorships, the 24/7 training center in Indianapolis.</li>
-          <li><span className="text-tln-red font-bold mr-2">▸</span><b>Community give-back</b> — through our 501(c)(3) charity partner Video Game Palooza.</li>
-        </ul>
-      </section>
+      {/* Origin Story */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            <p className="text-tln-red text-xs font-bold uppercase tracking-[0.2em] mb-3">Origin</p>
+            <h2 className="text-3xl mb-4">The Esports Roots</h2>
+            <p className="text-tln-text/80 font-medium leading-relaxed mb-4">
+              TLN&apos;s origin story began with esports and team-based training. Esports required more
+              than gaming skill. It required networks, systems, live operations, coaching,
+              communication, performance under pressure, and young talent learning in public.
+            </p>
+            <p className="text-tln-text/80 font-medium leading-relaxed">
+              That experience became the foundation for TLN&apos;s broader work in technology training,
+              cybersecurity, workforce development, and AI-era systems.
+            </p>
+          </div>
 
-      <section className="max-w-4xl mx-auto px-6 py-10 border-t border-tln-line">
-        <h2 className="text-3xl mb-4">Charity partner — Video Game Palooza</h2>
-        <p className="text-tln-text/90 leading-relaxed font-medium mb-4">
-          When the Barrettos took over TLN in 2012, they didn&apos;t just preserve the brand — they
-          turned it into a mission. <b>Video Game Palooza</b> (501c3) was founded to translate
-          competitive gaming&apos;s lessons in passion + skill acquisition into education for under-served
-          Indianapolis youth.
-        </p>
-        <p className="text-tln-text/90 leading-relaxed font-medium mb-4">
-          <span className="text-tln-red font-bold">Since 2018, VGP has trained 2,000+ Hoosiers</span> in IT,
-          Cybersecurity, Coding, and AI through Hope Training Academy programs. Every TLN engagement
-          contributes back. Hiring TLN supports the next generation of Indiana technologists.
-        </p>
-        <div className="flex gap-4 flex-wrap mt-6">
-          <a href="https://videogamepalooza.org/esportseducation/" target="_blank" rel="noopener noreferrer"
-             className="inline-block px-5 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-sm no-underline">
-            VGP esports Education →
-          </a>
-          <a href="https://videogamepalooza.org/" target="_blank" rel="noopener noreferrer"
-             className="inline-block px-5 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline">
-            Charity Partners →
-          </a>
+          <div className="border-l-4 border-tln-red pl-6">
+            <p className="text-tln-red text-xs font-bold uppercase tracking-[0.2em] mb-3">Evolution</p>
+            <h2 className="text-3xl mb-4">The Evolution</h2>
+            <p className="text-tln-text/80 font-medium leading-relaxed mb-4">
+              Over time, TLN&apos;s mission expanded from esports into practical technology pathways:
+              cybersecurity awareness, apprenticeships, digital operations, AI-assisted development,
+              and real-world project delivery.
+            </p>
+            <p className="text-tln-text/80 font-medium leading-relaxed">
+              The AI era now needs the same kind of discipline esports demanded: teams, tools, trust,
+              pressure-tested workflows, and humans who know how to operate inside complex systems.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-10 border-t border-tln-line">
-        <h2 className="text-3xl mb-4">The chain of evolution</h2>
-        <ul className="space-y-2 text-tln-text/90 font-medium">
-          <li><b className="text-tln-red">2008-2012</b> — TLN Gamer House (Chicago). Halo team bootcamp. Trained Ninja.</li>
-          <li><b className="text-tln-red">2012</b> — Barrettos acquire TLN. Begin the education evolution.</li>
-          <li><b className="text-tln-red">2013-2017</b> — Video Game Palooza events. Game On esports center (one of the largest in the world at the time).</li>
-          <li><b className="text-tln-red">2018+</b> — Hope Training Academy formalizes the model. 2,000+ Hoosiers trained.</li>
-          <li><b className="text-tln-red">2019</b> — International Video Game Hall of Fame induction.</li>
-          <li><b className="text-tln-red">2025</b> — TLN reborn: cybersecurity / esports / custom tech, AI-augmented delivery, Indianapolis training center.</li>
-        </ul>
-        <Link href="/history" className="inline-block mt-6 text-tln-red font-bold text-sm uppercase tracking-wider no-underline">Read the full visual history →</Link>
+      {/* Today */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <div className="max-w-3xl">
+          <p className="text-tln-red text-xs font-bold uppercase tracking-[0.2em] mb-3">Today</p>
+          <h2 className="text-3xl mb-4">The LAN Network Today</h2>
+          <p className="text-tln-text/80 font-medium leading-relaxed mb-4">
+            Today, TLN is focused on human-led AI technology development, AI automation,
+            cybersecurity-aware implementation, and apprenticeship-supported talent pathways.
+          </p>
+          <p className="text-tln-text/80 font-medium leading-relaxed mb-8">
+            We help organizations turn AI ideas into practical systems while keeping humans
+            responsible for communication, review, security, and delivery.
+          </p>
+          <div className="flex gap-4 flex-wrap">
+            <Link href="/ai-technology-development" className="inline-block px-6 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wider text-sm no-underline hover:opacity-90">
+              See What We Build →
+            </Link>
+            <Link href="/how-we-deliver" className="inline-block px-6 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline">
+              How We Deliver
+            </Link>
+          </div>
+        </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-16 border-t border-tln-line">
-        <div className="border-l-4 border-tln-red pl-6 max-w-3xl">
-          <p className="text-2xl leading-tight mb-4">Same room. New mission.</p>
-          <p className="text-tln-text/90 leading-relaxed font-medium">
-            The Indianapolis lab that powers our AI fabric is the same room where Ninja and his Halo
-            team practiced. We just have better tools now — and a mission to lift the next generation
-            of Hoosier technologists with every engagement we run.
+      {/* Esports archive link */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <div className="bg-tln-ink border-2 border-tln-line rounded-lg p-8 max-w-2xl">
+          <p className="text-tln-red text-xs font-bold uppercase tracking-[0.2em] mb-3">Heritage Archive</p>
+          <h2 className="text-2xl mb-3">The Original TLN (2008–2012)</h2>
+          <p className="text-tln-text/80 font-medium leading-relaxed mb-6">
+            The original TLN esports site remains available as an archive of the company&apos;s
+            esports heritage and early team-training model.
           </p>
+          <a href="https://esports.thelannetwork.com" target="_blank" rel="noopener noreferrer"
+            className="inline-block px-5 py-3 border-2 border-tln-line text-tln-text rounded font-bold uppercase tracking-wider text-sm hover:border-tln-red transition-colors no-underline">
+            Visit TLN Esports Archive ↗
+          </a>
         </div>
       </section>
     </div>
