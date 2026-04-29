@@ -68,16 +68,18 @@ export default function Home() {
               Born Chicago 2008 · Reborn Indianapolis 2025
             </p>
             <h1 className="text-5xl md:text-6xl mb-6">
-              Human-Led AI Technology Development
+              Technology Built by Humans.<br />
+              <span className="text-tln-red">Accelerated by AI.</span>
             </h1>
             <p className="text-lg text-tln-text/90 mb-4 leading-relaxed font-medium max-w-2xl">
-              The LAN Network builds AI-native software, automations, cybersecurity systems, and workforce
-              pathways using senior human leadership, governed AI workflows, and apprenticeship-trained talent.
+              The LAN Network delivers software, cybersecurity, and AI integration projects
+              with a human project lead on every engagement — and AI assisting inside governed workflows.
+              You get speed without losing accountability.
             </p>
             <p className="text-tln-text/85 mb-8 leading-relaxed max-w-2xl font-medium">
-              Born from esports and team-based technology training, TLN now helps organizations scope, build,
-              secure, and deploy AI-era technology. Clients communicate with human project leads. AI assists
-              inside governed workflows. Human specialists review and approve final deliverables.
+              From web and mobile apps to cloud infrastructure and staff augmentation —
+              every deliverable is reviewed, tested, and approved by a human before it ships.
+              No black-box AI. No offshore handoff. One accountable team.
             </p>
             <div className="flex gap-4 flex-wrap">
               <Link
