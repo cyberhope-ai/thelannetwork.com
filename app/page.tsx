@@ -3,21 +3,33 @@ import Image from "next/image";
 
 const services = [
   {
-    icon: "🤖",
-    title: "AI Technology Development",
-    desc: "Custom AI-assisted software, prototypes, dashboards, internal tools, agent workflows, and MVPs — built with human oversight.",
-    cta: { href: "/ai-technology-development", label: "Explore AI Development →" },
+    icon: "💻",
+    title: "Web Development",
+    desc: "Custom React, Next.js, and full-stack applications — from rapid MVPs to enterprise-scale platforms, built with human oversight.",
+    cta: { href: "/services/web-development", label: "Explore Web Dev →" },
   },
   {
-    icon: "⚙️",
-    title: "AI Automation",
-    desc: "Workflow automation, AI-assisted operations, business process redesign, documentation systems, and productivity tooling.",
-    cta: { href: "/ai-automation", label: "Explore Automation →" },
+    icon: "📱",
+    title: "Mobile Development",
+    desc: "React Native and native iOS/Android apps built to production standards with full App Store deployment support.",
+    cta: { href: "/services/mobile-development", label: "Explore Mobile →" },
+  },
+  {
+    icon: "🤖",
+    title: "AI Integration",
+    desc: "LLMs, RAG pipelines, vector databases, and governed agent workflows integrated into your existing products.",
+    cta: { href: "/services/ai-integration", label: "Explore AI Integration →" },
+  },
+  {
+    icon: "☁️",
+    title: "Cloud Infrastructure",
+    desc: "AWS, GCP, Azure architecture, IaC with Terraform, CI/CD pipelines, and cost-optimised deployments.",
+    cta: { href: "/services/cloud-infrastructure", label: "Explore Cloud →" },
   },
   {
     icon: "🛡️",
     title: "Cybersecurity",
-    desc: "Cyber-aware development, security reviews, cyber hygiene, risk assessments, and secure implementation practices.",
+    desc: "Penetration testing, security reviews, risk assessments, and secure implementation practices for every project.",
     cta: { href: "/cybersecurity", label: "Explore Cybersecurity →" },
   },
   {
@@ -237,12 +249,20 @@ export default function Home() {
             Tell us what you are trying to build. TLN can help scope the project, define the workflow,
             identify the right human and AI-assisted delivery model, and map a practical path to execution.
           </p>
-          <Link
-            href="/start-a-project"
-            className="inline-block px-8 py-4 bg-tln-red text-white font-bold rounded uppercase tracking-wider text-sm no-underline hover:opacity-90"
-          >
-            Start a Project →
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/start-a-project"
+              className="inline-block px-8 py-4 bg-tln-red text-white font-bold rounded uppercase tracking-wider text-sm no-underline hover:opacity-90 text-center"
+            >
+              Start a Project →
+            </Link>
+            <Link
+              href="/case-studies"
+              className="inline-block px-8 py-4 border border-tln-line text-tln-muted font-bold rounded uppercase tracking-wider text-sm no-underline hover:border-tln-red hover:text-tln-red text-center"
+            >
+              See Case Studies →
+            </Link>
+          </div>
         </div>
       </section>
     </div>
