@@ -27,6 +27,7 @@ const esportsMenu = [
 
 const servicesMenu = [
   { href: "/services",                        label: "All Services" },
+  { href: "/case-studies",                    label: "Case Studies" },
   { href: "/services/web-development",        label: "Web Development" },
   { href: "/services/mobile-development",     label: "Mobile Development" },
   { href: "/services/ai-integration",         label: "AI Integration" },

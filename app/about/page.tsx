@@ -78,6 +78,42 @@ export default function About() {
         </div>
       </section>
 
+      {/* Software Development Capability */}
+      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
+        <div className="mb-4">
+          <span className="text-xs font-bold uppercase tracking-widest text-tln-red">What We Build</span>
+        </div>
+        <h2 className="font-display text-3xl md:text-4xl text-tln-text mb-6">Software Development Capability</h2>
+        <p className="text-tln-muted text-lg mb-10 max-w-2xl">
+          The LAN Network has evolved into a full-service software development partner.
+          We deliver custom applications, AI integrations, cloud infrastructure, and ongoing managed services —
+          all under a single, accountable team.
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          {[
+            { title: "Agile Delivery", desc: "Weekly sprint reviews. You see progress constantly — not at the end of a six-month contract." },
+            { title: "Human-Led AI", desc: "AI accelerates our engineers — every deliverable is reviewed and signed off by a human with accountability for the outcome." },
+            { title: "Full Stack", desc: "React, Next.js, Python, Node.js, PostgreSQL, AWS, GCP. We own the full stack so nothing falls between vendors." },
+            { title: "Governed Process", desc: "Every project starts with a governed spec review. Requirements locked, change requests documented, delivery tracked against a measurable definition of done." },
+            { title: "Project Management", desc: "Each engagement has a dedicated PM who reports directly to your team. One point of accountability, clear comms, no surprises." },
+            { title: "Post-Launch Support", desc: "Retainer options, monitoring dashboards, and a responsive support SLA for every production system we build." },
+          ].map(s => (
+            <div key={s.title} className="border border-tln-line rounded-xl p-5 bg-tln-ink hover:border-tln-red/40 transition-colors">
+              <h3 className="font-display text-lg mb-2 text-tln-text">{s.title}</h3>
+              <p className="text-tln-muted text-sm leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link href="/services" className="inline-block px-6 py-3 bg-tln-red text-white font-bold uppercase tracking-wide rounded-lg no-underline hover:opacity-90 text-center">
+            View All Services
+          </Link>
+          <Link href="/case-studies" className="inline-block px-6 py-3 border border-tln-line text-tln-muted font-bold uppercase tracking-wide rounded-lg no-underline hover:border-tln-red hover:text-tln-red text-center">
+            See Case Studies
+          </Link>
+        </div>
+      </section>
+
       {/* Esports archive link */}
       <section className="max-w-6xl mx-auto px-6 py-16 border-t border-tln-line">
         <div className="bg-tln-ink border-2 border-tln-line rounded-lg p-8 max-w-2xl">
