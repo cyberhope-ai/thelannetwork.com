@@ -3,6 +3,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
+// ── Development Services dropdown (renamed from "Services", includes How We Deliver) ──
+const devServicesMenu = [
+  { href: "/services",                        label: "All Development Services" },
+  { href: "/services/web-development",        label: "Web Development" },
+  { href: "/services/mobile-development",     label: "Mobile Development" },
+  { href: "/ai-technology-development",       label: "AI Development" },
+  { href: "/ai-automation",                   label: "AI Automation" },
+  { href: "/services/ai-integration",         label: "AI Integration" },
+  { href: "/services/cloud-infrastructure",   label: "Cloud Infrastructure" },
+  { href: "/services/staff-augmentation",     label: "Staff Augmentation" },
+  { href: "/services/managed-services",       label: "Managed Services" },
+  { href: "/services/digital-transformation", label: "Digital Transformation" },
+  { href: "/apprenticeships",                 label: "Apprenticeships" },
+  { href: "/how-we-deliver",                  label: "How We Deliver" },
+  { href: "/case-studies",                    label: "Case Studies" },
+];
+
 const cyberMenu = [
   { href: "/cybersecurity",             label: "Cybersecurity Overview" },
   { href: "/cybersecurity/external",    label: "External Pen Testing" },
@@ -25,20 +42,10 @@ const esportsMenu = [
   { href: "https://esports.thelannetwork.com", label: "Legacy Site (archive)", external: true },
 ];
 
-const servicesMenu = [
-  { href: "/services",                        label: "All Services" },
-  { href: "/services/web-development",        label: "Web Development" },
-  { href: "/services/mobile-development",     label: "Mobile Development" },
-  { href: "/services/ai-integration",         label: "AI Integration" },
-  { href: "/ai-technology-development",       label: "AI Technology Development" },
-  { href: "/ai-automation",                   label: "AI Automation" },
-  { href: "/services/cloud-infrastructure",   label: "Cloud Infrastructure" },
-  { href: "/services/staff-augmentation",     label: "Staff Augmentation" },
-  { href: "/services/managed-services",       label: "Managed Services" },
-  { href: "/services/digital-transformation", label: "Digital Transformation" },
-  { href: "/apprenticeships",                 label: "Apprenticeships" },
-  { href: "/case-studies",                    label: "Case Studies" },
-  { href: "/how-we-deliver",                  label: "How We Deliver" },
+// ── About dropdown (includes History sub-page) ────────────────────────────────
+const aboutMenu = [
+  { href: "/about",   label: "About The LAN Network" },
+  { href: "/history", label: "Our History" },
 ];
 
 function Dropdown({ label, items }: {
@@ -82,15 +89,12 @@ export default function Nav() {
           <span className="font-display text-lg text-tln-text whitespace-nowrap">The LAN Network</span>
         </Link>
 
-        {/* Desktop nav — clean 5-item structure */}
+        {/* Desktop nav — Development Services | Cybersecurity | esports | About▾ | Start a Project */}
         <nav className="hidden lg:flex items-center gap-6 text-xs">
-          <Dropdown label="Services" items={servicesMenu} />
+          <Dropdown label="Development Services" items={devServicesMenu} />
           <Dropdown label="Cybersecurity" items={cyberMenu} />
           <Dropdown label="esports" items={esportsMenu} />
-          <Link href="/about"
-            className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
-            About
-          </Link>
+          <Dropdown label="About" items={aboutMenu} />
           <Link href="/start-a-project"
             className="px-4 py-2 bg-tln-red text-white rounded font-bold uppercase tracking-wide text-xs no-underline hover:opacity-90 whitespace-nowrap">
             Start a Project
@@ -104,12 +108,12 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mobile dropdown — clean structure */}
+      {/* Mobile dropdown */}
       {open && (
         <div className="lg:hidden border-t border-tln-line bg-tln-black px-6 py-4 flex flex-col gap-3 text-xs">
           <div className="border-b border-tln-line pb-2">
-            <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">Services</p>
-            {servicesMenu.map(i => (
+            <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">Development Services</p>
+            {devServicesMenu.map(i => (
               <Link key={i.href} href={i.href} className="block text-tln-muted/70 hover:text-tln-red pl-3 py-1 no-underline text-xs" onClick={() => setOpen(false)}>{i.label}</Link>
             ))}
           </div>
@@ -127,7 +131,12 @@ export default function Nav() {
                 : <Link key={i.href} href={i.href} className="block text-tln-muted/70 hover:text-tln-red pl-3 py-1 no-underline text-xs" onClick={() => setOpen(false)}>{i.label}</Link>
             ))}
           </div>
-          <Link href="/about" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>About</Link>
+          <div className="border-b border-tln-line pb-2">
+            <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">About</p>
+            {aboutMenu.map(i => (
+              <Link key={i.href} href={i.href} className="block text-tln-muted/70 hover:text-tln-red pl-3 py-1 no-underline text-xs" onClick={() => setOpen(false)}>{i.label}</Link>
+            ))}
+          </div>
           <Link href="/start-a-project" className="mt-2 px-4 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wide no-underline text-center" onClick={() => setOpen(false)}>Start a Project</Link>
         </div>
       )}
