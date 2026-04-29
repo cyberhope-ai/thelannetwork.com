@@ -25,6 +25,17 @@ const esportsMenu = [
   { href: "https://esports.thelannetwork.com", label: "Legacy Site (archive)", external: true },
 ];
 
+const servicesMenu = [
+  { href: "/services",                        label: "All Services" },
+  { href: "/services/web-development",        label: "Web Development" },
+  { href: "/services/mobile-development",     label: "Mobile Development" },
+  { href: "/services/ai-integration",         label: "AI Integration" },
+  { href: "/services/cloud-infrastructure",   label: "Cloud Infrastructure" },
+  { href: "/services/staff-augmentation",     label: "Staff Augmentation" },
+  { href: "/services/managed-services",       label: "Managed Services" },
+  { href: "/services/digital-transformation", label: "Digital Transformation" },
+];
+
 function Dropdown({ label, items }: {
   label: string;
   items: { href: string; label: string; external?: boolean }[];
@@ -81,8 +92,8 @@ export default function Nav() {
           {/* Cybersecurity dropdown */}
           <Dropdown label="Cybersecurity" items={cyberMenu} />
 
-          {/* esports dropdown */}
-          <Dropdown label="esports" items={esportsMenu} />
+          {/* Services dropdown */}
+          <Dropdown label="Services" items={servicesMenu} />
 
           <Link href="/apprenticeships"
             className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
@@ -92,6 +103,10 @@ export default function Nav() {
             className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
             How We Deliver
           </Link>
+
+          {/* esports — right before About per Rick directive */}
+          <Dropdown label="esports" items={esportsMenu} />
+
           <Link href="/about"
             className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
             About
@@ -121,6 +136,14 @@ export default function Nav() {
             ))}
           </div>
           <div className="border-t border-tln-line pt-2">
+            <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">Services</p>
+            {servicesMenu.map(i => (
+              <Link key={i.href} href={i.href} className="block text-tln-muted/70 hover:text-tln-red pl-3 py-1 no-underline text-xs" onClick={() => setOpen(false)}>{i.label}</Link>
+            ))}
+          </div>
+          <Link href="/apprenticeships" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>Apprenticeships</Link>
+          <Link href="/how-we-deliver" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>How We Deliver</Link>
+          <div className="border-t border-tln-line pt-2">
             <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">esports</p>
             {esportsMenu.map(i => (
               i.external
@@ -128,8 +151,6 @@ export default function Nav() {
                 : <Link key={i.href} href={i.href} className="block text-tln-muted/70 hover:text-tln-red pl-3 py-1 no-underline text-xs" onClick={() => setOpen(false)}>{i.label}</Link>
             ))}
           </div>
-          <Link href="/apprenticeships" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>Apprenticeships</Link>
-          <Link href="/how-we-deliver" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>How We Deliver</Link>
           <Link href="/about" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>About</Link>
           <Link href="/start-a-project" className="mt-2 px-4 py-3 bg-tln-red text-white rounded font-bold uppercase tracking-wide no-underline text-center" onClick={() => setOpen(false)}>Start a Project</Link>
         </div>
