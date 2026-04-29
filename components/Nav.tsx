@@ -27,14 +27,18 @@ const esportsMenu = [
 
 const servicesMenu = [
   { href: "/services",                        label: "All Services" },
-  { href: "/case-studies",                    label: "Case Studies" },
   { href: "/services/web-development",        label: "Web Development" },
   { href: "/services/mobile-development",     label: "Mobile Development" },
   { href: "/services/ai-integration",         label: "AI Integration" },
+  { href: "/ai-technology-development",       label: "AI Technology Development" },
+  { href: "/ai-automation",                   label: "AI Automation" },
   { href: "/services/cloud-infrastructure",   label: "Cloud Infrastructure" },
   { href: "/services/staff-augmentation",     label: "Staff Augmentation" },
   { href: "/services/managed-services",       label: "Managed Services" },
   { href: "/services/digital-transformation", label: "Digital Transformation" },
+  { href: "/apprenticeships",                 label: "Apprenticeships" },
+  { href: "/case-studies",                    label: "Case Studies" },
+  { href: "/how-we-deliver",                  label: "How We Deliver" },
 ];
 
 function Dropdown({ label, items }: {
@@ -78,42 +82,17 @@ export default function Nav() {
           <span className="font-display text-lg text-tln-text whitespace-nowrap">The LAN Network</span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-4 text-xs">
-          {/* AI Development */}
-          <Link href="/ai-technology-development"
-            className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
-            AI Development
-          </Link>
-          <Link href="/ai-automation"
-            className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
-            AI Automation
-          </Link>
-
-          {/* Cybersecurity dropdown */}
-          <Dropdown label="Cybersecurity" items={cyberMenu} />
-
-          {/* Services dropdown */}
+        {/* Desktop nav — clean 5-item structure */}
+        <nav className="hidden lg:flex items-center gap-6 text-xs">
           <Dropdown label="Services" items={servicesMenu} />
-
-          <Link href="/apprenticeships"
-            className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
-            Apprenticeships
-          </Link>
-          <Link href="/how-we-deliver"
-            className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
-            How We Deliver
-          </Link>
-
-          {/* esports — right before About per Rick directive */}
+          <Dropdown label="Cybersecurity" items={cyberMenu} />
           <Dropdown label="esports" items={esportsMenu} />
-
           <Link href="/about"
             className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide transition-colors no-underline whitespace-nowrap">
             About
           </Link>
           <Link href="/start-a-project"
-            className="px-3 py-2 bg-tln-red text-white rounded font-bold uppercase tracking-wide text-xs no-underline hover:opacity-90 whitespace-nowrap">
+            className="px-4 py-2 bg-tln-red text-white rounded font-bold uppercase tracking-wide text-xs no-underline hover:opacity-90 whitespace-nowrap">
             Start a Project
           </Link>
         </nav>
@@ -125,26 +104,22 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile dropdown — clean structure */}
       {open && (
         <div className="lg:hidden border-t border-tln-line bg-tln-black px-6 py-4 flex flex-col gap-3 text-xs">
-          <Link href="/ai-technology-development" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>AI Development</Link>
-          <Link href="/ai-automation" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>AI Automation</Link>
-          <div className="border-t border-tln-line pt-2">
-            <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">Cybersecurity</p>
-            {cyberMenu.map(i => (
-              <Link key={i.href} href={i.href} className="block text-tln-muted/70 hover:text-tln-red pl-3 py-1 no-underline text-xs" onClick={() => setOpen(false)}>{i.label}</Link>
-            ))}
-          </div>
-          <div className="border-t border-tln-line pt-2">
+          <div className="border-b border-tln-line pb-2">
             <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">Services</p>
             {servicesMenu.map(i => (
               <Link key={i.href} href={i.href} className="block text-tln-muted/70 hover:text-tln-red pl-3 py-1 no-underline text-xs" onClick={() => setOpen(false)}>{i.label}</Link>
             ))}
           </div>
-          <Link href="/apprenticeships" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>Apprenticeships</Link>
-          <Link href="/how-we-deliver" className="text-tln-muted hover:text-tln-red font-bold uppercase tracking-wide no-underline" onClick={() => setOpen(false)}>How We Deliver</Link>
-          <div className="border-t border-tln-line pt-2">
+          <div className="border-b border-tln-line pb-2">
+            <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">Cybersecurity</p>
+            {cyberMenu.map(i => (
+              <Link key={i.href} href={i.href} className="block text-tln-muted/70 hover:text-tln-red pl-3 py-1 no-underline text-xs" onClick={() => setOpen(false)}>{i.label}</Link>
+            ))}
+          </div>
+          <div className="border-b border-tln-line pb-2">
             <p className="text-tln-muted font-bold uppercase tracking-wide mb-1">esports</p>
             {esportsMenu.map(i => (
               i.external
