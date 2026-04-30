@@ -54,19 +54,19 @@ function Dropdown({ label, items }: {
 }) {
   return (
     <div className="relative group">
-      <button className="text-tln-muted hover:text-tln-red text-xs font-bold uppercase tracking-wide transition-colors py-2 flex items-center gap-1">
-        {label} <span className="text-tln-red text-[10px]">▾</span>
+      <button className="text-tln-muted hover:text-tln-red text-base font-bold uppercase tracking-wide transition-colors py-2 flex items-center gap-1">
+        {label} <span className="text-tln-red text-xs">▾</span>
       </button>
       <div className="absolute left-0 top-full mt-1 w-64 bg-tln-ink border-2 border-tln-line rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
         {items.map(item => (
           item.external ? (
             <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer"
-              className="block px-4 py-2.5 text-xs text-tln-text/90 hover:bg-tln-black hover:text-tln-red font-medium border-b border-tln-line/40 last:border-0 no-underline">
+              className="block px-4 py-2.5 text-base text-tln-text/90 hover:bg-tln-black hover:text-tln-red font-medium border-b border-tln-line/40 last:border-0 no-underline">
               {item.label} ↗
             </a>
           ) : (
             <Link key={item.href} href={item.href}
-              className="block px-4 py-2.5 text-xs text-tln-text/90 hover:bg-tln-black hover:text-tln-red font-medium border-b border-tln-line/40 last:border-0 no-underline">
+              className="block px-4 py-2.5 text-base text-tln-text/90 hover:bg-tln-black hover:text-tln-red font-medium border-b border-tln-line/40 last:border-0 no-underline">
               {item.label}
             </Link>
           )
@@ -90,13 +90,13 @@ export default function Nav() {
         </Link>
 
         {/* Desktop nav — Development Services | Cybersecurity | esports | About▾ | Start a Project */}
-        <nav className="hidden lg:flex items-center gap-6 text-xs">
+        <nav className="hidden lg:flex items-center gap-6 text-base">
           <Dropdown label="Development Services" items={devServicesMenu} />
           <Dropdown label="Cybersecurity" items={cyberMenu} />
           <Dropdown label="esports" items={esportsMenu} />
           <Dropdown label="About" items={aboutMenu} />
           <Link href="/start-a-project"
-            className="px-4 py-2 bg-tln-red text-white rounded font-bold uppercase tracking-wide text-xs no-underline hover:opacity-90 whitespace-nowrap">
+            className="px-4 py-2 bg-tln-red text-white rounded font-bold uppercase tracking-wide text-base no-underline hover:opacity-90 whitespace-nowrap">
             Start a Project
           </Link>
         </nav>
