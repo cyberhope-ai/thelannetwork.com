@@ -28,6 +28,7 @@ export interface MeterEvent {
   meter_id: string;
   ticket_id: string;
   project_id: string;
+  customer_id: string;
   raw_units: number;
   governance_weights: number[];
   criticality_multiplier: number;
@@ -60,6 +61,7 @@ export interface MeterEventInput {
   meter_id: string;
   ticket_id: string;
   project_id: string;
+  customer_id: string;
   raw_units?: number;
   governance_weights?: number[];
   criticality_multiplier?: number;
@@ -81,7 +83,20 @@ export const CRITICALITY_MULTIPLIERS: Record<CriticalityClass, number> = {
   C5: 10.0,
 };
 
-export const GENIE_SESSION_GOVERNANCE_WEIGHTS = [0.35, 5.0, 75.0];
+export const LAYER_WEIGHTS = {
+  L4_RECEIPT: 1.0,
+  L5_TRON: 5.0,
+  L6_GENIE: 0.35,
+  L10_TRI_AUDIT: 75.0,
+} as const;
+
+export type LayerWeightKey = keyof typeof LAYER_WEIGHTS;
+
+export const GENIE_SESSION_GOVERNANCE_WEIGHTS = [
+  LAYER_WEIGHTS.L6_GENIE,
+  LAYER_WEIGHTS.L5_TRON,
+  LAYER_WEIGHTS.L10_TRI_AUDIT,
+];
 
 export const EMS_INCIDENT_441_SHA256 = "414186c9f763dd219ae69378f31bcd9bf1d30afd24e57b4d0d32b05960b41021";
 
@@ -107,6 +122,12 @@ function assertIdFormat(value: string, prefix: PcosIdPrefix): void {
 function assertRange(name: string, value: number, min: number, max: number): void {
   if (!Number.isFinite(value) || value < min || value > max) {
     throw new Error(`${name} must be between ${min} and ${max}: ${value}`);
+  }
+}
+
+function assertRequiredString(name: string, value: string): void {
+  if (typeof value !== "string" || value.trim().length === 0) {
+    throw new Error(`${name} is required`);
   }
 }
 
@@ -161,6 +182,7 @@ export function createMeterEvent(input: MeterEventInput): MeterEvent {
     meter_id: input.meter_id,
     ticket_id: input.ticket_id,
     project_id: input.project_id,
+    customer_id: input.customer_id,
     raw_units: rawUnits,
     governance_weights: governanceWeights,
     criticality_multiplier: criticalityMultiplier,
@@ -169,6 +191,7 @@ export function createMeterEvent(input: MeterEventInput): MeterEvent {
 
   assertIdFormat(event.event_id, "MTR");
   assertIdFormat(event.ticket_id, "EVT");
+  assertRequiredString("customer_id", event.customer_id);
   event.governance_weights.forEach((weight) => assertRange("governance_weight", weight, 0, Number.MAX_SAFE_INTEGER));
   return event;
 }
@@ -197,6 +220,7 @@ export function runProofOfRevenue(): ProofOfRevenueResult {
     meter_id: "GENIE-SESSION",
     ticket_id: evidence.ticket_id,
     project_id: qtoken.project_id,
+    customer_id: qtoken.customer_id,
     raw_units: 1.0,
     governance_weights: GENIE_SESSION_GOVERNANCE_WEIGHTS,
     criticality_multiplier: CRITICALITY_MULTIPLIERS[qtoken.criticality],
