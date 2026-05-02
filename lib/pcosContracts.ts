@@ -28,9 +28,8 @@ export interface MeterEvent {
   meter_id: string;
   ticket_id: string;
   project_id: string;
-  customer_id: string;
   raw_units: number;
-  credit_weight: number;
+  governance_weights: number[];
   criticality_multiplier: number;
   total_credits: number;
 }
@@ -61,9 +60,8 @@ export interface MeterEventInput {
   meter_id: string;
   ticket_id: string;
   project_id: string;
-  customer_id: string;
   raw_units?: number;
-  credit_weight?: number;
+  governance_weights?: number[];
   criticality_multiplier?: number;
 }
 
@@ -83,7 +81,7 @@ export const CRITICALITY_MULTIPLIERS: Record<CriticalityClass, number> = {
   C5: 10.0,
 };
 
-export const GENIE_SESSION_CREDIT_WEIGHT = 0.35;
+export const GENIE_SESSION_GOVERNANCE_WEIGHTS = [0.35, 5.0, 75.0];
 
 export const EMS_INCIDENT_441_SHA256 = "414186c9f763dd219ae69378f31bcd9bf1d30afd24e57b4d0d32b05960b41021";
 
@@ -114,10 +112,10 @@ function assertRange(name: string, value: number, min: number, max: number): voi
 
 export function calculateMeterCredits(
   rawUnits: number,
-  creditWeight: number,
+  governanceWeights: number[],
   criticalityMultiplier: number,
 ): number {
-  return rawUnits * creditWeight * criticalityMultiplier;
+  return rawUnits * governanceWeights.reduce((total, weight) => total + weight, 0) * criticalityMultiplier;
 }
 
 export function createQToken(input: QTokenInput): QToken {
@@ -156,22 +154,22 @@ export function createEvidenceTicket(input: EvidenceTicketInput): EvidenceTicket
 
 export function createMeterEvent(input: MeterEventInput): MeterEvent {
   const rawUnits = input.raw_units ?? 1.0;
-  const creditWeight = input.credit_weight ?? 1.0;
+  const governanceWeights = input.governance_weights ?? [1.0];
   const criticalityMultiplier = input.criticality_multiplier ?? 1.0;
   const event: MeterEvent = {
     event_id: input.event_id ?? makeId("MTR"),
     meter_id: input.meter_id,
     ticket_id: input.ticket_id,
     project_id: input.project_id,
-    customer_id: input.customer_id,
     raw_units: rawUnits,
-    credit_weight: creditWeight,
+    governance_weights: governanceWeights,
     criticality_multiplier: criticalityMultiplier,
-    total_credits: calculateMeterCredits(rawUnits, creditWeight, criticalityMultiplier),
+    total_credits: calculateMeterCredits(rawUnits, governanceWeights, criticalityMultiplier),
   };
 
   assertIdFormat(event.event_id, "MTR");
   assertIdFormat(event.ticket_id, "EVT");
+  event.governance_weights.forEach((weight) => assertRange("governance_weight", weight, 0, Number.MAX_SAFE_INTEGER));
   return event;
 }
 
@@ -199,9 +197,8 @@ export function runProofOfRevenue(): ProofOfRevenueResult {
     meter_id: "GENIE-SESSION",
     ticket_id: evidence.ticket_id,
     project_id: qtoken.project_id,
-    customer_id: qtoken.customer_id,
     raw_units: 1.0,
-    credit_weight: GENIE_SESSION_CREDIT_WEIGHT,
+    governance_weights: GENIE_SESSION_GOVERNANCE_WEIGHTS,
     criticality_multiplier: CRITICALITY_MULTIPLIERS[qtoken.criticality],
   });
 
